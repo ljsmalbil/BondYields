@@ -1,6 +1,4 @@
-
-
-
+from yield_measures import YieldMeasures
 
 """
 Yield to maturity is similar to current yield, which divides annual cash inflows from a bond by
@@ -14,68 +12,20 @@ means of calculating the return from a bond.
 """
 
 if __name__ == "__main__":
-    face_value = 1200
     coupon_rate = 0.05
-    ytm_est = 0.01
+    market_price = 1000
+    face_value = 1200
 
-    """
-    # Get the terms
-    coupon_value = face_value * coupon_rate
-    n = 1
-    market_price = 900
+    bond = YieldMeasures(face_value=face_value, market_price=market_price, coupon_rate=coupon_rate)
+    print(bond.current_yield())
 
-    # coupon_{i} / (1 + YTM)**{n}
-    YTM = 0.5
+    print('\n')
 
-    second_term = ((1 - (1/((1 + YTM)**n)))/YTM)
-    third_term = (1/(1 + YTM)**n)
+    YTM = bond.yield_to_maturity(n=12)
 
-    bond_price = (coupon_value * second_term) + (face_value * third_term)
-    print(bond_price)
-
-    # Get the terms
-    coupon_value = face_value * coupon_rate
-    n = 1
-    market_price = 900
-
-    # coupon_{i} / (1 + YTM)**{n}
-    YTM = 0.5
-
-    second_term = ((1 - (1/((1 + YTM)**n)))/YTM)
-    third_term = (1/(1 + YTM)**n)
-    """
-    # Get the terms
-    coupon_value = face_value * coupon_rate
-    n = 1
-    market_price = 1100
-
-    #bond_price = (coupon_value * ((1 - (1/((1 + YTM)**n)))/YTM)) + (face_value * (1/(1 + YTM)**n))
-
-
-    # Create an interval
-    bond_price = 0
-    YTM_pos = 0.0001
-    YTM_neg = -0.0001
-    print(bond_price)
-
-    lower_bound = market_price - (market_price * 0.001)
-    upper_bound = market_price + (market_price * 0.001)
-
-    # N.B. Sensitivity is important here
-    print(market_price)
-
-
-    #print(lower_bound < bond_price < upper_bound)
-
-    while (lower_bound < bond_price < upper_bound) == False:
-        if face_value > market_price:
-            bond_price = (coupon_value * ((1 - (1/((1 + YTM_pos)**n)))/YTM_pos)) + (face_value * (1/(1 + YTM_pos)**n))
-            YTM_pos += 0.0001
-            print(bond_price)
-            print(YTM_pos)
-        else:
-            bond_price = (coupon_value * ((1 - (1 / ((1 + YTM_neg) ** n))) / YTM_neg)) + (face_value * (1 / (1 + YTM_neg) ** n))
-            YTM_neg -= 0.0001
-            print(bond_price)
-            print(YTM_neg)
-
+    if YTM > coupon_rate:
+        print('Because the coupon rate is higher than the YTM, the bond trades at a premium.\n')
+        print(YTM)
+    else:
+        print('Because the coupon rate is lower than the YTM, the bond trades at a discount.\n')
+        print(YTM)
