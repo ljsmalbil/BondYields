@@ -51,6 +51,9 @@ class YieldMeasures:
         else:
             return YTM_pos
 
+    #def pure_discount_bounds(self):
+        # pure disct. bonds info here
+
 
 
 
