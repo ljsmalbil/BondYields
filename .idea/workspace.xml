@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02e9a2c1-b0a3-4334-a2ee-936c0eb9cdc1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yield_measures.py" beforeDir="false" afterPath="$PROJECT_DIR$/yield_measures.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
