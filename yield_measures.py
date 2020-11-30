@@ -55,5 +55,15 @@ class YieldMeasures:
         # pure disct. bonds info here
 
 
+    #def Macaulay duration
+        # Macaulay duration is the name given to the weighted average time until cash flows are received, and is measured in years.
+        # Macaulay duration is a time measure with units in years, and really makes sense only for an instrument with fixed cash flows.
+        # For a standard bond the Macaulay duration will be between 0 and the maturity of the bond. It is equal to the maturity if
+        #  and only if the bond is a zero-coupon bond. (wiki)
+
+
+        # Macaulay duration implemtation here
+
+
 
 
